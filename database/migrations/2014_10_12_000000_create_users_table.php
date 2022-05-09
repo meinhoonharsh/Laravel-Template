@@ -19,6 +19,10 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->integer('role')->default(0);
+            $table->string('google_id')->nullable();
+            $table->string('linkedin_id')->nullable();
+            $table->string('github_id')->nullable();
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
