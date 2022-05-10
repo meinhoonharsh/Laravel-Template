@@ -19,8 +19,4 @@ class HomeController extends Controller
         return view('welcome');
     }
 
-    public function jmch(){
-        return view('pages/jmch');
-    }   
-
 }
