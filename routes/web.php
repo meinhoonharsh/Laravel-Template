@@ -3,19 +3,29 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\LinkedinController;
 use App\Http\Controllers\GithubController;
 
 
+// Guest Routes
+Route::get('/home',[HomeController::class,'home'])->name('home');
 
-// Student Routes
-Route::get('/',[HomeController::class,'index']);
+
+// -----------------------------
+// ------- Admin Routes ------
+// -----------------------------
 
 
-// Teacher Routes
-Route::get('/teacher',[TeacherController::class,'index']);
+// Create Route Prefix
+Route::prefix('admin')->group(function () {
+    Route::get('/',[AdminController::class,'index']);
+});
+
+  
+
 
 
 
