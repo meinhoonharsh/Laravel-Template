@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 
 @section('styles')
@@ -429,7 +429,7 @@ input:checked + section.box .box-title:before {
     <div class="modal-dialog">
       <form method="post" action="/teacher/editworkshop">
         @csrf 
-        <input type="hidden" name="id" value="{{$workshop->id}}">
+        <input type="hidden" name="id" value="43">
         <input type="hidden" name="host_id" >
         <div class="modal-content">
         <div class="modal-header">
@@ -441,22 +441,17 @@ input:checked + section.box .box-title:before {
             <label for="exampleFormControlSelect2">Category</label>
             <select class="form-control" id="exampleFormControlSelect2" name="category_id">
               <option selected disabled value="">Select Category</option>
-              @forelse ($categories as $category)
-              <option value="{{$category->id}}" @if($category->id == $workshop->category_id) selected @endif >{{$category->name}}</option>
-              @empty
-              <option value="" disabled>No categories found</option>
-              @endforelse
-
+            
             </select>
           </div>
           <div class="form-group">
             <label for="exampleInputUsername1">Name</label>
-            <input type="text" name="name" value="{{$workshop->name}}" class="form-control" id="exampleInputUsername1" placeholder="Workshop Name"required>
+            <input type="text" name="name" value="" class="form-control" id="exampleInputUsername1" placeholder="Workshop Name"required>
           </div>
           <div class="form-group">
             <label for="exampleTextarea1">Description</label>
             <textarea class="form-control" name="description"  placeholder="Workshop Description here" id="exampleTextarea1" rows="4" spellcheck="false" >
-{{$workshop->description}}
+
             </textarea>
           </div>
           <div class="row">
@@ -464,7 +459,7 @@ input:checked + section.box .box-title:before {
               <div class="form-group row">
                 <label class="col-sm-3 col-form-label">Start Date</label>
                 <div class="col-sm-9">
-                  <input type="date" name="startdate" value="{{ substr($workshop->startdate,0,10)}}" class="form-control" required>
+                  <input type="date" name="startdate" value="" class="form-control" required>
                 </div>
               </div>
             </div>
@@ -472,7 +467,7 @@ input:checked + section.box .box-title:before {
               <div class="form-group row">
                 <label class="col-sm-3 col-form-label">End Date</label>
                 <div class="col-sm-9">
-                  <input type="date" name="enddate" value="{{ substr($workshop->enddate,0,10)}}" class="form-control" required>
+                  <input type="date" name="enddate" value="ed" class="form-control" required>
                 </div>
               </div>
             </div>
