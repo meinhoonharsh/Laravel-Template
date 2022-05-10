@@ -30,8 +30,9 @@ class GoogleController extends Controller
         try {
       
             $user = Socialite::driver('google')->user();
-       
+            // return $user;
             $finduser = User::where('google_id', $user->id)->orWhere('email',$user->email)->first();
+            // return $finduser;
        
             if($finduser){
        
@@ -43,13 +44,14 @@ class GoogleController extends Controller
                 $newUser = User::create([
                     'name' => $user->name,
                     'email' => $user->email,
-                    'google_id'=> $user->id,
                     'password' => encrypt('123456dummy')
                 ]);
+                $newUser->google_id = $user->id;
+                $newUser->save();
       
                 Auth::login($newUser);
       
-                return redirect()->intended('dashboard');
+                return redirect()->intended('admin');
             }
       
         } catch (Exception $e) {
