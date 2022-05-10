@@ -301,8 +301,8 @@ input:checked + section.box .box-title:before {
 
         <?php
           $analytics = [
-          ["Total Lectures","success",$analyticsdata['lectures']],
-          ["Total Tasks","primary",$analyticsdata['tasks']],
+          ["Total Lectures","success",12],
+          ["Total Tasks","primary",23],
           ["Attenance Marked","info",34],
           ["Tasks Submitted","warning",23]
           // ["Attended","danger"],
@@ -336,10 +336,10 @@ input:checked + section.box .box-title:before {
       </div>
       <div class="col-md-6 card mb-4 p-3">
 
-        <h1><span class="text-muted"></span>{{$workshop->name}}</h1>
-        <h4><span class="text-muted"></span> {{$workshop->description}}</h4>
-        <h4><span class="text-muted">StartDate: </span> {{date('Y M d',strtotime($workshop->startdate))}}</h4>
-        <h4><span class="text-muted">EndDate: </span> {{date('Y M d',strtotime($workshop->enddate))}}</h4>
+        <h1><span class="text-muted"></span>dfgdgdg</h1>
+        <h4><span class="text-muted"></span> Soem Random Description</h4>
+        <h4><span class="text-muted">StartDate: </span> sfsfsfsw</h4>
+        <h4><span class="text-muted">EndDate: </span>xfvsfsf</h4>
         
         <button type="button" class="btn btn-primary font-weight-bold mb-4 text-dark" data-bs-toggle="modal" data-bs-target="#addModal" style="width:95%;margin-left:2.5%;position:absolute;bottom:0;left:0">
           Edit
@@ -381,31 +381,19 @@ input:checked + section.box .box-title:before {
                   <?php 
                     $completedworkshops = [1,1,1,1,1,1]
                     ?>
-                  @forelse($tasks as $student)
+                  @forelse($completedworkshops as $student)
                   <tr>
                     <td>
                       {{$loop->iteration}}
                     </td>
                     <td class="text-light font-weight-medium">
-                      {{$student->name}}
+                      Harsh
                     </td>
-                    <td>{{$student->message}}</td>
-                    <td> {{$student->email}} </td> 
-                    <td> {{$student->contact ?? 'Not Added Yet'}} </td>
-                    <td> {{date("d M Y", strtotime($student->created_at))}} </td>
-                    <td> {{$student->submissionfile}} </td>
-                       {{-- <td>
-                        <span class="edit"
-                        data-id="{{$student->id}}" 
-                        data-name="{{$student->name}}"
-                        data-email="{{$student->email}}"
-                        data-contact="{{$student->contact ?? 'Not Added'}}"
-                        data-college="{{$student->college ?? 'Not Added'}}"
-                        data-year="{{$student->year ?? 'Not Added'}}"
-                        data-branch="{{$student->branch ?? 'Not Added'}}"
-                        ><i class="text-success h6 mdi mdi-eye"></i></span>&nbsp;
-                       
-                    </td> --}}
+                    <td>fdfgds</td>
+                    <td> sdfsfs </td> 
+                    <td> Not Added Yet </td>
+                    <td> 22 May 2022</td>
+                    <td> sfdsdf </td>
                   </tr>
                   @empty
                     <td></td>
